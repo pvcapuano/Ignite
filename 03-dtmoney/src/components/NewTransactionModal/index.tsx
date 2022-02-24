@@ -33,8 +33,8 @@ export function NewTransactionModal({
             onClick={() => {
               setType("deposit");
             }}
-            // eslint-disable-next-line eqeqeq
-            isActive={type == "deposit"}
+            isActive={type === "deposit"}
+            activeColor="green"
           >
             <span>Entrada</span>
           </RadioBox>
@@ -44,8 +44,8 @@ export function NewTransactionModal({
             onClick={() => {
               setType("withdraw");
             }}
-            // eslint-disable-next-line eqeqeq
-            isActive={type == "withdraw"}
+            isActive={type === "withdraw"}
+            activeColor="red"
           >
             <span>Saída</span>
           </RadioBox>
