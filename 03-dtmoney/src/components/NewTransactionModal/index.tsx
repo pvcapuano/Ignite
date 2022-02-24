@@ -2,6 +2,7 @@ import { FormEvent, useState } from "react";
 import Modal from "react-modal";
 import { Container, RadioBox, TransactionTypeContainer } from "./styles";
 
+import { api } from "../../services/api";
 interface NewTransactionProps {
   isOpen: boolean;
   onRequestClose: () => void;
@@ -19,7 +20,15 @@ export function NewTransactionModal({
 
   const handleCreateNewTransaction = (event: FormEvent) => {
     event.preventDefault();
-    console.log(title, value, category, type);
+
+    const data = {
+      title,
+      value,
+      category,
+      type,
+    };
+
+    api.post("/transactions", data);
   };
 
   return (
