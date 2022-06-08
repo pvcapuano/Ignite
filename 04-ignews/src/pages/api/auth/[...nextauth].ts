@@ -15,7 +15,7 @@ export default NextAuth({
       },
     }),
   ],
-
+  /* jwt */
   callbacks: {
     async signIn({ user, account, profile, credentials }) {
       const { email } = user;
